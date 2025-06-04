@@ -15,25 +15,41 @@ async function Posts_page() {
   }
 
   const posts = await response.json();
-  const postjsx= posts.map((post)=>{
+  const postjsx = posts.map((post) => {
     return (
-      <Link href={`/posts/${post.id}`} style={{width:"70%"}} >
-      <div  style={{width:"100%",background:"white",padding:"10px",borderRadius:"10px",marginTop:"20px",cursor:"pointer"}}>
-        <h1>
-            {post.title}
-        </h1>
-        <p>{post.body}</p>
-      </div></Link>
-    )})
+      <Link href={`/posts/${post.id}`} style={{ width: "70%" }}>
+        <div
+          style={{
+            width: "100%",
+            background: "white",
+            padding: "10px",
+            borderRadius: "10px",
+            marginTop: "20px",
+            cursor: "pointer",
+          }}
+        >
+          <h1>{post.title}</h1>
+          <p>{post.body}</p>
+        </div>
+      </Link>
+    );
+  });
   console.log(posts);
 
   return (
     <div>
-      <h1 style={{color:"white"}}>Posts_page</h1>
-       {/*posts */}
-       <div style={ { display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
+      <h1 style={{ color: "white" }}>Posts_page</h1>
+      {/*posts */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
         {postjsx}
-       </div>
+      </div>
       {/*<div>
         <Todo />
       </div>*/}
