@@ -2,15 +2,21 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "build:large": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next build",
+  "start": "next start",
+  "lint": "next lint"
+}
+
+,
   "dependencies": {
+    "next": "15.1.8",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.8"
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^6.0.1"
   }
 }
